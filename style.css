@@ -1,0 +1,48 @@
+body {
+    color: rgb(205, 205, 205);
+    background-color: rgb(44, 45, 46);
+    font-family: 'Courier New', Courier, monospace, arial, helvetica, sans-serif;
+    text-align: center;
+    margin-left: 400px;  
+    margin-right: 400px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: auto;
+    padding: 0;
+}
+
+mark.red {
+    color:#ff0000;
+    background: none;
+}
+
+/* .content2 {
+  margin-top: 300px;
+} */
+
+
+.links {
+  margin-top: 300px;
+}
+
+ /* unvisited link */
+ a:link {
+    color: rgb(48, 176, 255);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(192, 122, 249);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  } 
