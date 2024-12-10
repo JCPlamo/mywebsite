@@ -10,6 +10,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .header {
@@ -38,7 +39,7 @@ body {
   flex-direction: column;
   padding: 20px;
   width: 700px;
-  border: #ff0000 solid;
+  /* border: #ff0000 solid; */
   margin: auto;
 }
 
@@ -81,4 +82,12 @@ mark.red {
   /* selected link */
   a:active {
     color: blue;
-  } 
+  }
+
+
+.footer {
+  background-color: black;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+}
