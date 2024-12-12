@@ -69,6 +69,10 @@ body {
     padding: 0;
 }
 
+.content1 > p {
+  font-size: larger;
+}
+
 mark.red {
     color:#ff0000;
     background: none;
@@ -273,6 +277,22 @@ a:active {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #888; 
+}
+
+/* Typewriter effect */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: white; /* Change to match text color */
+  height: 1.2em;
+  margin-left: 5px;
+  animation: blink 1.00s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* moreaboutme.html */
