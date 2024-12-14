@@ -92,12 +92,12 @@ mark.red {
 }
 
 .links {
-  color: black;
-  background-color: white;
+  color: white;
+  /* background-color: white; */
 }
 
 .links a {
-  color: blue
+  /* color: blue */
 }
 
 
