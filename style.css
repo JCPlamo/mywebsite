@@ -376,11 +376,12 @@ a:active {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 100px;
+  gap: 10px;
+  height: 1000px;
 }
 
 .projects.project1para {
-  width: 700px;
+  width: 50%;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -392,12 +393,16 @@ a:active {
   align-items: center;
 }
 
+.projects.imgcontainer {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
 .projects.project1img {
   background-color: gray;
-  width: 500px;
-  height: 550px;
+  width: 700px;
+  height: 350px;
   margin-top: 50px;
-  margin-bottom: 50px;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
