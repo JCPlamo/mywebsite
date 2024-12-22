@@ -425,3 +425,28 @@ a:active {
   justify-content: center;
   border-radius: 25px;
 }
+
+
+/* resume.html */
+.resume-banner {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* width: 700px; */
+  /* border: #ff0000 solid; */
+  /* margin: auto; */
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume {
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 1000px;
+}
