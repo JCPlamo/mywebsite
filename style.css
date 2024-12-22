@@ -356,7 +356,7 @@ a:active {
 }
 
 /* projects.html */
-.projects-content1 {
+.projects-banner {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -370,13 +370,20 @@ a:active {
   overflow: hidden;
 }
 
+.banner-divider {
+  background-color: rgb(255, 255, 255, 0.8);
+  height: 2px;
+  width: 50px;
+  border-radius: 2px;
+  position: relative;
+}
+
 .projects {
   color: black;
   background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
   height: 1000px;
 }
 
@@ -388,8 +395,7 @@ a:active {
   justify-content: center;
   align-items: center;
   margin-top: 25px;
-  font-size: 18px;;
-  gap: 0;
+  font-size: 18px;
 }
 
 .projects.project1para {
