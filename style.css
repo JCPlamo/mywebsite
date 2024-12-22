@@ -50,7 +50,7 @@ body {
   color: white;
 }
 
-.content1 {
+.home-banner {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -64,12 +64,12 @@ body {
   overflow: hidden;   /* Prevent the circles from overflowing */
 }
 
-.content1 > h1 {
+.home-banner > h1 {
     font-size: 50px;
     padding: 0;
 }
 
-.content1 > p {
+.home-banner > p {
   font-size: larger;
 }
 
@@ -78,7 +78,7 @@ mark.red {
     background: none;
 }
 
-.content2 {
+.aboutme {
   color: black;
   background-color: white;
   display: flex;
@@ -87,7 +87,7 @@ mark.red {
   gap: 50px;
 }
 
-.content2.img {
+.aboutme.img {
   background-color: gray;
   width: 500px;
   height: 550px;
@@ -98,7 +98,7 @@ mark.red {
   border-radius: 25px;
 }
 
-.content2.paragraph1 {
+.aboutme.paragraph1 {
   width: 500px;
   background-color: white;
   display: flex;
@@ -111,7 +111,7 @@ mark.red {
   align-items: center;
 }
 
-.content2.paragraph1 > h2 {
+.aboutme.paragraph1 > h2 {
   padding: 0;
   margin-bottom: 0;
   font-size: 25px;
