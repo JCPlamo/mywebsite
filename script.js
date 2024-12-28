@@ -34,44 +34,43 @@ if (currentPage === 'index.html')
 
 //Select the header and a section to trigger the background color change
 const header = document.querySelector('.header');
-let triggerSection = null;
+let bannerSection = null;
 
 //Based on the current page, select the appropriate section after the banner
 if (currentPage === 'projects.html') 
 {
-    triggerSection = document.querySelector('.projects');   //projects.html
+    bannerSection = document.querySelector('.projects-banner');   //projects.html
 } 
 else if (currentPage === 'resume.html') 
 {
-    triggerSection = document.querySelector('.resume');     //resume.html
+    bannerSection = document.querySelector('.resume-banner');     //resume.html
 } 
 else if (currentPage === 'index.html') 
 {
-    triggerSection = document.querySelector('.aboutme');    //index.html
+    bannerSection = document.querySelector('.home-banner');    //index.html
 }
 
 console.log("Current Page: " + currentPage);
-console.log("Trigger Section:", triggerSection);
+console.log("Trigger Section:", bannerSection);
 
-if (triggerSection) 
+if (bannerSection) 
 {
-    console.log("sdfd");
-    const bufferOffset = 100;
+    const bufferOffset = 70;
 
     //Check scroll position and update background opacity of the header
     function checkScroll() 
     {
-        if (header && triggerSection) 
+        if (header && bannerSection) 
         {
             //Get the scroll position of the page
             const scrollPosition = window.scrollY;
             
             //Get the position of the trigger section
-            const triggerPosition = triggerSection.offsetTop;
-            const triggerHeight = triggerSection.offsetHeight;
+            const bannerPosition = bannerSection.offsetTop;
+            const bannerHeight = bannerSection.offsetHeight;
             
             //If the scroll position is within the range of the aboutme section, with buffer offset
-            if (scrollPosition >= (triggerPosition - bufferOffset) && scrollPosition <= (triggerPosition + triggerHeight))
+            if (scrollPosition >= (bannerPosition + bannerHeight - bufferOffset))
             {
                 header.style.backgroundColor = 'rgba(64, 0, 255, 0.7)';     //More opaque background
             } 
