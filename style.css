@@ -216,6 +216,10 @@ mark.red {
   width: 12%;
 }
 
+.github-button:hover {
+  filter: invert();
+}
+
 .socials {
   color: black;
   background-color: rgb(255, 255, 255);
@@ -272,11 +276,33 @@ mark.red {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.socials-button.linkedin {
+  color: #006196;
+}
+
+.socials-button.linkedin:hover {
+  background-color: black;
+  color: white;
+}
+
+.socials-button.linkedin:hover > img {
+  filter: brightness(0) invert(1);
+}
+
+.socials-button.instagram {
+  background: linear-gradient(45deg, #F58529, #D3006C, #9B2D9A, #8E44AD);
+  color: white;
+}
+
+.socials-button.instagram:hover {
+  background: linear-gradient(45deg, black, black);
+}
+
 .socials-button > img {
   width: 12%;
 }
 
-button:hover {
+.socials-button.instagram > img {
   filter: invert();
 }
 
