@@ -201,13 +201,13 @@ mark.red {
 .github-button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 60px;
-  width: 275px;
+  width: 250px;
   border-radius: 50px;
   border: none;
   font-size: 16px;
-  gap: 10px;
+  gap: 0;
   background-color: white;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -248,19 +248,26 @@ mark.red {
 .socials.img > img {
   width: 80%;
   filter: drop-shadow(2px 2px 15px rgba(0, 0, 0, 0.3));
-  border-radius: 50%;
+}
+
+.socials.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
 }
 
 .socials-button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 60px;
-  width: 275px;
+  width: 250px;
   border-radius: 50px;
   border: none;
   font-size: 16px;
-  gap: 10px;
+  gap: 0;
   background-color: white;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
