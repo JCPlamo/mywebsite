@@ -134,8 +134,8 @@ mark.red {
 
 .clubs.img {
   background-color: gray;
-  width: 500px;
-  height: 550px;
+  width: 550px;
+  height: 300px;
   margin-top: 50px;
   margin-bottom: 50px;
   align-items: center;
@@ -216,8 +216,20 @@ mark.red {
   width: 12%;
 }
 
+.github-button > a {
+  color: black;
+}
+
 .github-button:hover {
   filter: invert();
+}
+
+.github-button > a:hover {
+  text-decoration: none;
+}
+
+.github-button > a:active {
+  color: black;
 }
 
 .socials {
@@ -280,9 +292,18 @@ mark.red {
   color: #006196;
 }
 
+.socials-button.linkedin > a {
+  color: #006196;
+}
+
 .socials-button.linkedin:hover {
   background-color: black;
   color: white;
+}
+
+.socials-button.linkedin > a:hover, a:after {
+  color: white;
+  text-decoration: none;
 }
 
 .socials-button.linkedin:hover > img {
@@ -298,6 +319,11 @@ mark.red {
   background: linear-gradient(45deg, black, black);
 }
 
+.socials-button.instagram > a:hover, a:after {
+  color: white;
+  text-decoration: none;
+}
+
 .socials-button > img {
   width: 12%;
 }
@@ -307,7 +333,7 @@ mark.red {
 }
 
 .links {
-  color: white;
+  /* color: white; */
   /* background-color: white; */
 }
 
