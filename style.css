@@ -371,12 +371,68 @@ a:active {
 .footer {
   background-image: linear-gradient(to bottom right, rgb(89, 0, 255), rgb(54, 0, 87));
   display: flex;
-  /* flex-direction: column; */
-  padding: 30px;
   justify-content: center;
   /* width: 100%; */
+  gap: 10px;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
 }
 
+.footer.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: none;
+  padding: 50px;
+}
+
+.footer.main-container, .footer.social-container {
+  display: flex;
+  flex-direction: column;
+  /* border: solid red; */
+  width: 200px;
+  height: 100px;
+  background-image: none;
+  justify-content: flex-start;
+  font-weight: light;
+}
+
+.footer.main, .footer.social {
+  background-image: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer > span {
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+.footer.divider {
+  background-color: rgb(255, 255, 255, 0.3);
+  height: 2px;
+  width: 1000px;
+  border-radius: 2px;
+  position: relative;
+  background-image: none;
+}
+
+.footer.copyright {
+  background-image: none;
+}
+
+.footer.developer {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.169);
+  border-radius: 50px;
+  padding: 10px;
+  font-size: small;
+}
 
 /* ANIMATED BACKGROUND */
 .area{
