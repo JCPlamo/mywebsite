@@ -709,14 +709,12 @@ a:active {
 }
 
 .projects.project1 {
-  width: 50%;
-  background-color: white;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 25px;
   font-size: 18px;
+  gap: 50px;
 }
 
 .projects.project1para {
@@ -724,6 +722,7 @@ a:active {
   flex-direction: column;
   justify-content: flex-start;
   align-items: start;
+  line-height: 32px;
 }
 
 .projects.project1para > h5 {
@@ -733,7 +732,6 @@ a:active {
 }
 
 .projects.imgcontainer {
-  width: 50%;
   margin-bottom: 50px;
 }
 
@@ -745,6 +743,7 @@ a:active {
   align-items: center;
   justify-content: center;
   border-radius: 25px;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 
