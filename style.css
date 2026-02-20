@@ -89,6 +89,7 @@ mark.red {
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
+  padding: 25px;
 }
 
 .aboutme.img {
@@ -159,6 +160,42 @@ mark.red {
   line-height: 32px;
 }
 
+.activity {
+  color: black;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.activity.img {
+  background-color: gray;
+  width: 550px;
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.activity.paragraph {
+  width: 500px;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: red solid; */
+  /* margin-top: 30px; */
+  font-size: 18px;;
+  gap: 0;
+  align-items: center;
+  line-height: 32px;
+}
+
 .github {
   color: black;
   background-color: rgb(255, 255, 255);
@@ -211,6 +248,8 @@ mark.red {
   gap: 0;
   background-color: white;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  color: black;
+  text-decoration: none;
 }
 
 .github-button > img {
@@ -223,9 +262,6 @@ mark.red {
 
 .github-button:hover {
   filter: invert();
-}
-
-.github-button > a:hover {
   text-decoration: none;
 }
 
@@ -300,6 +336,7 @@ mark.red {
 .socials-button.linkedin:hover {
   background-color: black;
   color: white;
+  text-decoration: none;
 }
 
 .socials-button.linkedin > a:hover, a:after {
@@ -318,6 +355,7 @@ mark.red {
 
 .socials-button.instagram:hover {
   background: linear-gradient(45deg, black, black);
+  text-decoration: none;
 }
 
 .socials-button.instagram > a:hover, a:after {
@@ -703,21 +741,28 @@ a:active {
   color: black;
   background-color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  height: 1000px;
+  /* height: 1000px; */
 }
 
-.projects.project1 {
+.projects > ul {
+  justify-content: left;
+  align-content: flex-start;
+  text-align: left;
+}
+
+.projects.project {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 25px;
   font-size: 18px;
   gap: 50px;
+  flex-direction: row;
 }
 
-.projects.project1para {
+.projects.projectpara {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -725,7 +770,7 @@ a:active {
   line-height: 32px;
 }
 
-.projects.project1para > h5 {
+.projects.projectpara > h5 {
   gap: 0;
   margin-top: -20px;
   margin-bottom: 5px;
@@ -735,10 +780,9 @@ a:active {
   margin-bottom: 50px;
 }
 
-.projects.project1img {
+.projects.projectimg {
   background-color: gray;
   width: 700px;
-  height: 350px;
   margin-top: 50px;
   align-items: center;
   justify-content: center;
@@ -746,6 +790,56 @@ a:active {
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+.projects.projectimg img {
+  width: 700px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.projects.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.projects-github-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 60px;
+  width: 150px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  gap: 0;
+  background-color: white;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.projects-github-button > img {
+  width: 20%;
+}
+
+.projects-github-button > a {
+  color: black;
+}
+
+.projects-github-button:hover {
+  filter: invert();
+  text-decoration: none;
+}
+
+.projects-github-button > a:hover {
+  text-decoration: none;
+}
+
+.projects-github-button > a:active {
+  color: black;
+}
 
 /* resume.html */
 .resume-banner {
@@ -768,5 +862,14 @@ a:active {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 1000px;
+  padding: 25px;
+}
+
+.resume.pdfcontainer{
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 1400px;
 }
