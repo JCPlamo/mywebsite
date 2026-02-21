@@ -37,7 +37,11 @@ body {
 }
 
 .header-logo {
-  margin-left: 200px;
+  margin-left: -200px;
+}
+
+.header-logo img {
+  width: 5%;
 }
 
 .header-links {
