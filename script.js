@@ -1,8 +1,10 @@
 //Check which page the user is on by the URL
 const currentPage = window.location.pathname.split('/').pop();
 
+const page = currentPage === "" ? "index.html" : currentPage;
+
 //Typewriter effecting for header on index.html
-if (currentPage === 'index.html') 
+if (page === 'index.html') 
 {
     var i = 0;
     var speed = 100;    //The higher, the slower
@@ -37,20 +39,20 @@ const header = document.querySelector('.header');
 let bannerSection = null;
 
 //Based on the current page, select the appropriate section after the banner
-if (currentPage === 'projects.html') 
+if (page === 'projects.html') 
 {
     bannerSection = document.querySelector('.projects-banner');   //projects.html
 } 
-else if (currentPage === 'resume.html') 
+else if (page === 'resume.html') 
 {
     bannerSection = document.querySelector('.resume-banner');     //resume.html
 } 
-else if (currentPage === 'index.html') 
+else if (page === 'index.html') 
 {
     bannerSection = document.querySelector('.home-banner');    //index.html
 }
 
-console.log("Current Page: " + currentPage);
+console.log("Current Page: " + page);
 console.log("Trigger Section:", bannerSection);
 
 if (bannerSection) 
