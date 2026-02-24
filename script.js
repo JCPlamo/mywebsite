@@ -83,3 +83,55 @@ if (bannerSection)
 
     window.addEventListener('scroll', checkScroll);
 }
+
+
+const userId = "219610866503385088";
+
+async function updateDiscord() 
+{
+    const res = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+    const data = await res.json();
+    const presence = data.data;
+
+    const activity = presence.activities.find(a => a.type === 0);
+
+    if (!activity) return;
+
+    document.getElementById("gameName").textContent = activity.name;
+    document.getElementById("gameDetails").textContent =
+        activity.details ? activity.details.trim() : "";
+
+    document.getElementById("gameState").textContent =
+        activity.state ? activity.state.trim() : "";
+
+    // Large Image
+    if (activity.assets && activity.assets.large_image) 
+    {
+        const imageUrl = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
+        document.getElementById("largeImage").src = imageUrl;
+    }
+
+    // Time elapsed
+    let timer;
+
+    if (activity.timestamps && activity.timestamps.start) 
+    {
+        const start = activity.timestamps.start;
+
+        clearInterval(timer);
+
+        timer = setInterval(() => {
+            const elapsed = Date.now() - start;
+            const hours = Math.floor(elapsed / 3600000);
+            const minutes = Math.floor((elapsed % 3600000) / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+
+            document.getElementById("gameTime").textContent =
+            `🎮 ${hours}:${minutes.toString().padStart(2, "0")}:${seconds
+                .toString()
+                .padStart(2, "0")}`;
+        }, 1000);
+    }
+}
+
+updateDiscord();

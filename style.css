@@ -186,6 +186,64 @@ mark.red {
   box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+.activity.discord {
+  padding: 50px;
+}
+
+.discord-card {
+  width: 350px;
+  background-color: #2b2d31;
+  border-radius: 12px;
+  padding: 16px;
+  font-family: "gg sans", "Segoe UI", sans-serif;
+  color: #fff;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  color: #b5bac1;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.game-icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.game-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.game-details,
+.game-state {
+  font-size: 14px;
+  color: #b5bac1;
+}
+
+.game-time {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #57f287; /* Discord green */
+}
+
 .activity.paragraph {
   width: 500px;
   /* background-color: white; */
