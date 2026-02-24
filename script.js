@@ -87,51 +87,79 @@ if (bannerSection)
 
 const userId = "219610866503385088";
 
-async function updateDiscord() 
-{
-    const res = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
-    const data = await res.json();
-    const presence = data.data;
+const socket = new WebSocket("wss://api.lanyard.rest/socket");
 
+socket.addEventListener("open", () => {
+    // Subscribe to userID
+    socket.send(JSON.stringify({
+        op: 2,
+        d: {
+        subscribe_to_id: userId
+        }
+    }));
+    });
+
+    socket.addEventListener("message", (event) => {
+    const payload = JSON.parse(event.data);
+
+    // Only care about presence updates
+    if (payload.t === "INIT_STATE" || payload.t === "PRESENCE_UPDATE") {
+        updateCard(payload.d);
+    }
+    });
+
+    let timer;
+
+    function updateCard(presence) {
     const activity = presence.activities.find(a => a.type === 0);
 
-    if (!activity) return;
+    if (!activity) {
+        document.getElementById("gameName").textContent = "Not playing anything";
+        document.getElementById("gameDetails").textContent = "";
+        document.getElementById("gameState").textContent = "";
+        document.getElementById("gameTime").textContent = "";
+        return;
+    }
 
     document.getElementById("gameName").textContent = activity.name;
     document.getElementById("gameDetails").textContent =
         activity.details ? activity.details.trim() : "";
-
     document.getElementById("gameState").textContent =
         activity.state ? activity.state.trim() : "";
 
-    // Large Image
-    if (activity.assets && activity.assets.large_image) 
+    const imageElement = document.getElementById("largeImage");
+
+    if (activity.assets?.large_image && activity.application_id) 
     {
-        const imageUrl = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
-        document.getElementById("largeImage").src = imageUrl;
+        imageElement.src =
+            `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
+    }
+    else if (activity.assets?.small_image && activity.application_id) 
+    {
+        imageElement.src =
+            `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.png`;
+    }
+    else
+    {
+        imageElement.src = "kiryutyping.gif"
     }
 
-    // Time elapsed
-    let timer;
+    // Reset timer before starting a new one
+    clearInterval(timer);
 
-    if (activity.timestamps && activity.timestamps.start) 
-    {
+    if (activity.timestamps?.start) {
         const start = activity.timestamps.start;
 
-        clearInterval(timer);
-
         timer = setInterval(() => {
-            const elapsed = Date.now() - start;
-            const hours = Math.floor(elapsed / 3600000);
-            const minutes = Math.floor((elapsed % 3600000) / 60000);
-            const seconds = Math.floor((elapsed % 60000) / 1000);
+        const elapsed = Date.now() - start;
+        const hours = Math.floor(elapsed / 3600000);
+        const minutes = Math.floor((elapsed % 3600000) / 60000);
+        const seconds = Math.floor((elapsed % 60000) / 1000);
 
-            document.getElementById("gameTime").textContent =
+        document.getElementById("gameTime").textContent =
             `🎮 ${hours}:${minutes.toString().padStart(2, "0")}:${seconds
-                .toString()
-                .padStart(2, "0")}`;
+            .toString()
+            .padStart(2, "0")}`;
         }, 1000);
     }
 }
-
-updateDiscord();
